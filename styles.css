@@ -225,7 +225,7 @@ li {
         flex-direction: column-reverse;
     }
 
-    .big-heading, li {
+    .big-heading, .service-heading  {
         font-size: 2rem;
     }
 
