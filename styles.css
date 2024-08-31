@@ -18,7 +18,7 @@ h1 {
 }
 
 p {
-    color: #ffffffe6;
+    color: rgba(207, 204, 204, 0.9);
     line-height: 1.4rem; /* Adjusted for readability */
     font-size: medium;
 }
@@ -26,11 +26,13 @@ p {
 ol {
     display: flex;
     flex-direction: column;
+    margin-left: -2rem;
 }
 
 li {
     font-size: x-large;
-    font-weight: lighter;
+    font-weight: bold;
+    margin-left: 1.5rem;
 }
 
 .nav {
