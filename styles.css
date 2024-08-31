@@ -3,9 +3,9 @@ body {
     padding: 0;
     background: black;
     color: #ffffffe6;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
+    font-family: 'Lato Light', "Segoe UI Light", sans-serif;
     overflow-x: hidden;
+    line-height: 1.2;
 }
 
 button {
@@ -14,7 +14,13 @@ button {
 
 h1 {
     margin: 0;
-    font-weight: lighter;
+    font-weight: normal;
+}
+
+p {
+    color: #ffffffe6;
+    line-height: 1.4rem; /* Adjusted for readability */
+    font-size: medium;
 }
 
 ol {
@@ -25,12 +31,12 @@ ol {
 }
 
 li {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: x-large;
+    font-weight: lighter;
 }
 
 .nav {
-    width: 100vw;
+    width: 100%; /* Avoid potential scrollbar issues */
     height: 5rem;
     display: flex;
     align-items: center;
@@ -38,12 +44,11 @@ li {
     position: fixed;
     top: 0;
     background: black;
-    z-index: 1000; /* Ensures nav stays above other content */
+    z-index: 1000;
 }
 
 .nav-container {
-    width: 100%;
-    max-width: 80vw;
+    width: 80vw;
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -77,6 +82,7 @@ li {
 
 .container {
     width: 80vw;
+    max-width: 1440px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,39 +95,30 @@ li {
     gap: 1.5rem;
 }
 
-.left-side {
+.left-side, .right-side {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+}
+
+.left-side {
     padding-left: 1rem;
 }
 
-.right-side {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+.image-for-side, .service-image, .fourth_section-img {
+    width: 90%;
 }
 
-.image-for-side {
-    width: 100%;
-}
-
-.big-heading {
-    font-size: 4rem;
+.big-heading , .service-heading{
+    font-size: xxx-large;
+    font-weight: 400;
 }
 
 .hero-h1 {
     max-width: 90%;
     margin: 0;
-}
-
-p {
-    line-height: 2rem;
-    font-size: medium;
 }
 
 .CTA-BTN {
@@ -132,15 +129,19 @@ p {
 }
 
 .hero-bottom-container {
-    bottom: 0;
     width: 80vw;
+    max-width: 1440px;
     background-color: black;
     overflow: hidden;
     white-space: nowrap;
 }
 
-.hero-btn-content {
+.hero-btn-border {
+    width: 100%;
     border-top: 1px solid #252323;
+}
+
+.hero-btn-content {
     display: inline-block;
     padding-left: 100%;
     animation: scroll 10s linear infinite;
@@ -166,18 +167,13 @@ p {
     cursor: pointer;
 }
 
-
-.service-image {
-    width: 80%;
-}
-
 .section-left-heading {
     width: 100%;
     max-width: 80vw;
     text-align: left;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: flex-start;
 }
 
 #bgSection3 {
@@ -199,6 +195,46 @@ p {
     border-left: 2px solid #252323;
 }
 
-/*.small-para{*/
-/*    font-size: medium;*/
-/*}*/
+/* Media Queries */
+@media (max-width: 991.98px) {
+    .big-heading, h1 {
+        font-size: xx-large;
+    }
+    li {
+        font-size: x-large;
+    }
+}
+
+@media (max-width: 576px) {
+    .sides-wrapper {
+        flex-direction: column;
+    }
+
+    .hero-section {
+        flex-direction: column-reverse;
+    }
+
+    .big-heading, li {
+        font-size: 2rem;
+    }
+
+    .service-image, .fourth_section-img {
+        width: 80%;
+    }
+
+    .image-for-side {
+        width: 50%;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+    }
+
+    .bgSection-img {
+        display: none;
+    }
+
+    .fourth_section {
+        flex-direction: column-reverse;
+    }
+}
